@@ -26,7 +26,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.TOKEN }}
 
-      - name: Build and push Docker images
+      - name: Build and push Go image
         uses: docker/build-push-action@v6.15.0
         with:
           context: .
@@ -34,3 +34,12 @@ jobs:
           tags: |
             ghcr.io/danielbutlerismyname/go-api:latest
             ghcr.io/danielbutlerismyname/go-api:${{ github.sha }}
+
+      - name: Build and push Ollama image
+        uses: docker/build-push-action@v6.15.0
+        with:
+          context: ./ollama
+          push: true
+          tags: |
+            ghcr.io/danielbutlerismyname/ollama-custom:latest
+            ghcr.io/danielbutlerismyname/ollama-custom:${{ github.sha }}

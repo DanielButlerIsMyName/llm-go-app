@@ -1,6 +1,6 @@
 services:
   llm:
-    image: ollama/ollama
+    build: ollama
     container_name: ollama
     ports:
       - "11434:11434"
