@@ -31,7 +31,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x
+          platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/danielbutlerismyname/go-api:latest
             ghcr.io/danielbutlerismyname/go-api:${{ github.sha }}
@@ -41,7 +41,7 @@ jobs:
         with:
           context: ./ollama
           push: true
-          platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x
+          platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/danielbutlerismyname/ollama-custom:latest
             ghcr.io/danielbutlerismyname/ollama-custom:${{ github.sha }}
